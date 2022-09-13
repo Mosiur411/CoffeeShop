@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="pb-5">
+    <h1 class="p text-blue-400 text-3xl text-center my-5 font-bold">
+      Welcome To our Cofee Shop
+    </h1>
+    <p class="text-blue-400 text-center text-2xl">Menu</p>
+    <div class="my-3 w-[40vw] mx-auto">
+      <table id="table-row" class="bg-gray-100 w-full">
+        <tr class="bg-black text-white">
+          <th>Product/ Add-on</th>
+          <th>Milk</th>
+          <th>Cream</th>
+          <th>Latte</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="my-3 w-[40vw] mx-auto">
+      <h2 class="w-full bg-red-300 text-center">Place Your Order</h2>
+      <form
+        class="my-3 w-[80%] mx-auto bg-blue-200 p-5 rounded-lg"
+        id="formSubmit"
+      >
+        <div>
+          <label for="cars">Choose a cofee:</label>
+          <select name="cofeeType" id="cofeeType">
+            <option value="espresso">Espresso</option>
+            <option value="cappuccino">Cappuccino</option>
+            <option value="latte">Latte</option>
+          </select>
+        </div>
+        <div class="my-2">
+          <label for="addOn">Add-on:</label>
+          <select name="addOn" id="addOn">
+            <option value="milk">Milk</option>
+            <option value="cream">Cream</option>
+            <option value="Latte">Latte</option>
+          </select>
+        </div>
+        <div class="my-2">
+          <label for="addOn">Quantity:</label>
+          <input
+            type="number"
+            min="1"
+            name="qty"
+            id="qty"
+            value="1"
+            class="w-[20%] px-1 rounded focus:outline-none"
+          />
+        </div>
+        <input
+          class="bg-blue-400 rounded p-1 px-2 text-white mt-2"
+          type="submit"
+          value="Add Order"
+        />
+        <span id="receipt"></span>
+      </form>
+    </div>
+    <div class="hidden mb-5" id="view-receipt">
+      <div id="showReceipt">
+        <div class="bg-green-50 w-[40vw] mx-auto">
+          <h2 class="mb-2 text-center text-2xl">Receipt</h2>
+          <table id="receiptTable" class="w-full"></table>
+        </div>
+      </div>
+
+      <div class="w-[40vw] mx-auto">
+        <form class="w-full flex">
+          <input
+            class="bg-blue-500 text-white p-1 px-2 rounded-md w-[40%] mx-auto"
+            type="button"
+            value="Pay Bill"
+          />
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
